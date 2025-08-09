@@ -1,0 +1,8 @@
+En esta carpeta se encuentra el script para capturar una línea base (baseline) de rendimiento en la base de datos antes de ejecutar cualquier carga de trabajo o prueba de optimización.
+Este paso es fundamental para tener un punto de referencia y así poder comparar métricas de rendimiento antes y después de aplicar cambios.
+
+## Objetivo
+-Crear un snapshot inicial en AWR (Automatic Workload Repository).
+-Obtener y guardar métricas clave de rendimiento.
+-Documentar el estado inicial de la base de datos.
+
