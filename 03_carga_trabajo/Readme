@@ -1,0 +1,12 @@
+## Objetivo
+
+Generar una carga de trabajo controlada sobre la base de datos con el fin de provocar actividad suficiente para que el AWR (Automatic Workload Repository) pueda registrar métricas de rendimiento.
+Este paso es clave para simular un escenario real en el que el sistema está bajo presión, y así obtener datos útiles para el análisis posterior.
+Descripción
+
+En este paso se ejecutará un script que:
+-Inserta, actualiza y consulta datos de forma masiva.
+-Utiliza loops y funciones de Oracle para simular concurrencia.
+-Genera I/O y consumo de CPU de forma progresiva.
+-Mantiene la base ocupada durante un período determinado para asegurar que haya información relevante en los snapshots de AWR.
+
