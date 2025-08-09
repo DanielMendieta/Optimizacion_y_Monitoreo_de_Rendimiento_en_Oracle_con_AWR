@@ -1,0 +1,11 @@
+En este paso se prepara el entorno para comenzar a trabajar con AWR (Automatic Workload Repository) en Oracle.
+Se realizan configuraciones necesarias para garantizar que las métricas se recopilen de forma correcta y que podamos compararlas antes y después de aplicar mejoras.
+
+## Actividades realizadas
+Verificar el estado de AWR y confirmar que está habilitado.
+Ajustar el intervalo de captura de snapshots para realizar pruebas más rápidas (por ejemplo, cada 5 minutos).
+Crear un usuario de trabajo con permisos para consultar vistas de rendimiento.
+Identificar la instancia y parámetros clave relacionados con AWR y estadísticas.
+
+## Objetivo
+Garantizar que el repositorio de trabajo esté listo para capturar métricas confiables, de manera que podamos documentar un estado inicial (baseline) del rendimiento.
