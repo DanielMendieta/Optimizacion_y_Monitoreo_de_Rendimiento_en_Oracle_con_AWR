@@ -4,12 +4,12 @@ COLUMN RETENTION FORMAT A20
 SELECT SNAP_INTERVAL, RETENTION
 FROM DBA_HIST_WR_CONTROL;
 
--- 2. Ajustar intervalo de captura de snapshots a 5 minutos para pruebas
+-- 2. Ajustar intervalo de captura de snapshots a 10 minutos para pruebas
 -- (en producción, normalmente es 60 minutos)
 BEGIN
   DBMS_WORKLOAD_REPOSITORY.modify_snapshot_settings(
-    interval  => 5,   -- minutos
-    retention => 1440 -- minutos (1 día de retención para pruebas)
+    interval  => 10,   -- minutos
+    retention => 691201 -- minutos (1 día de retención para pruebas)
   );
 END;
 /
