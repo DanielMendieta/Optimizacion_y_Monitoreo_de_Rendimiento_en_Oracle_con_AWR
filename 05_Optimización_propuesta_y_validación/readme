@@ -1,0 +1,15 @@
+## Objetivo:
+Aplicar mejoras basadas en el análisis del reporte AWR del Paso 04, optimizando la consulta identificada como más costosa y validando la mejora en rendimiento mediante nuevas métricas.
+
+## Estrategia de Optimización
+-Revisión del plan de ejecución para identificar full table scans innecesarios.
+-Creación de índice compuesto que cubra las columnas utilizadas en filtros y condiciones de join.
+-Reescritura de consulta para reducir accesos redundantes.
+-Uso de estadísticas actualizadas con DBMS_STATS para que el optimizador tenga información precisa.
+
+## Resultados Esperados
+Tiempo de respuesta de la consulta reducido.
+Menor carga sobre el subsistema de almacenamiento.
+Mejora general en la disponibilidad de recursos para otras operaciones.
+Caída del peso de la consulta en el “Top SQL” del sistema.
+
