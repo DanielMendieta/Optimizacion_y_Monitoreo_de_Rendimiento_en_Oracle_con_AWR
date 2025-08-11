@@ -1,0 +1,22 @@
+--Resumen Ejecutivo
+El análisis del AWR correspondiente a los snapshots 50–53 reveló que el mayor factor de degradación del rendimiento fue el evento de espera db file sequential read, lo que indica un alto tiempo invertido en operaciones de I/O de disco para lecturas puntuales.
+Este patrón es típico de consultas que realizan búsquedas por índice o accesos a filas no contiguas.
+
+--Principales Hallazgos
+-Evento predominante: db file sequential read (lectura física de bloques individuales desde disco).
+-Consumo de recursos: elevado tiempo de respuesta total, con la mayor parte atribuida a I/O y no a CPU.
+-Consultas críticas: una consulta específica concentró la mayor parte del tiempo total (Elapsed Time) y las lecturas físicas (Physical Reads).
+-Comportamiento observado: acceso repetitivo y disperso a datos, con poca eficiencia en el patrón de lectura.
+
+--Conclusiones
+-El cuello de botella principal no está en la CPU, sino en el subsistema de almacenamiento.
+-La consulta con mayor impacto podría beneficiarse de mejoras en su estrategia de acceso a datos.
+-Las lecturas dispersas sugieren un diseño de índices subóptimo o un patrón de consulta que no aprovecha la estructura actual de los datos.
+
+--Recomendaciones
+1-Revisar plan de ejecución de la consulta más costosa para identificar operaciones de acceso ineficientes.
+2-Optimizar índices, creando o ajustando aquellos que soporten mejor los filtros y joins más usados.
+3-Reducir accesos repetidos mediante:
+4-Reescritura de consultas para minimizar viajes a disco.
+5-Uso de Global Temporary Tables o Materialized Views para almacenar resultados intermedios.
+6-Monitorear el impacto de los cambios con un nuevo AWR para verificar mejoras.
