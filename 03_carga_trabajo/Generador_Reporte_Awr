@@ -1,0 +1,20 @@
+SET LINESIZE 200
+SET PAGESIZE 0
+SET LONG 1000000
+SET LONGCHUNKSIZE 1000000
+SET TRIMSPOOL ON
+SET TERMOUT OFF
+SPOOL reporte_carga_awrrpt.html.html
+
+SELECT output
+FROM TABLE(
+  DBMS_WORKLOAD_REPOSITORY.awr_report_html(
+    (SELECT dbid FROM v$database),           -- DBID
+    (SELECT instance_number FROM v$instance), -- Instance
+    50,                                      -- Snapshot inicial
+    53                                       -- Snapshot final
+  )
+);
+
+SPOOL OFF
+SET TERMOUT ON
