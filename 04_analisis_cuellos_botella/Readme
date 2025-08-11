@@ -1,0 +1,2 @@
+Esta carpeta contiene el análisis del reporte AWR generado después de la simulación de carga.
+El objetivo fue identificar el principal cuello de botella y las consultas responsables del mayor consumo de recursos.
