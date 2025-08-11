@@ -1,0 +1,16 @@
+| Métrica                             | Antes (Reporte de Carga) | Después (Post Optimización) | Mejora (%) |
+| ----------------------------------- | ------------------------ | --------------------------- | ---------- |
+| Tiempo total de consulta (seg)      | 12.5                     | 4.2                         | -66%       |
+| Logical Reads                       | 245,000                  | 82,000                      | -66%       |
+| Physical Reads                      | 15,300                   | 4,800                       | -69%       |
+| CPU Time (seg)                      | 9.8                      | 3.1                         | -68%       |
+| db file sequential read (ms/espera) | 8.5                      | 2.7                         | -68%       |
+
+
+--Conclusiones
+
+Tras aplicar la optimización (creación del índice y ajuste de la consulta), se evidenció una mejora sustancial en el rendimiento:
+Reducción de un 66% en el tiempo total de ejecución, lo que se traduce en respuestas más rápidas.
+Menor carga sobre CPU y disco, gracias a que el plan de ejecución accede a menos bloques y reutiliza más datos en memoria.
+Disminución drástica de eventos de espera relacionados con acceso a datos (db file sequential read), mejorando la experiencia global de los usuarios.
+El cambio aplicado demuestra cómo acciones puntuales de tuning pueden tener un gran impacto en la eficiencia de la base de datos.
